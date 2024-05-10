@@ -80,57 +80,55 @@ main {
   }
 }
 #step2:checked ~ main {
-  aside [for="step1"] .step-circle {
+  aside [for="step2"] .step-circle {
     background-color: #9699aa;
   }
-  .step-2  {
+  .step-2 {
     display: flex;
-     justify-content: flex-start;
-    align-items:flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
-    label{
+    label {
       width: 30%;
       border: 2px solid rgb(236, 221, 221);
       margin: auto;
       padding: 1rem;
       border-radius: 5px;
-img{
-  margin-bottom: 2rem;
-}
+      img {
+        margin-bottom: 2rem;
+      }
     }
 
-    label:hover{
+    .plan:hover {
       border: 2px solid rgb(135, 127, 206);
-      
     }
 
     div.slide-switch {
       display: flex;
       width: 100%;
-      justify-content:center;
+      justify-content: center;
       margin-top: 1.5rem;
       background-color: #f9f9f9;
-      border:none;
-      
-      .slide-switch{
+      border: none;
+
+      .slide-switch {
         position: relative;
         width: 52px;
         padding: 0.7rem;
-        margin-left:10px;
+        margin-left: 10px;
         margin-right: 10px;
+        background-color: hsl(231, 11%, 63%);
       }
-
     }
-    p{
+    p {
       padding: auto;
     }
-    
 
     .slide-switch-checkbox {
       display: none;
     }
-    
+
     .slide-switch-slider {
       position: absolute;
       top: 0;
@@ -141,7 +139,7 @@ img{
       border-radius: 34px;
       transition: 0.4s;
     }
-    
+
     .slide-switch-slider:before {
       content: "";
       position: absolute;
@@ -153,20 +151,34 @@ img{
       border-radius: 50%;
       transition: 0.4s;
     }
-    
-    .slide-switch-checkbox:checked +.slide-switch-slider {
-      background-color: rgb(180, 180, 180);
-    }
-    
-    .slide-switch-checkbox:checked +.slide-switch-slider:before {
-      transform: translateX(26px);
+
+    .slide-switch-checkbox:checked + .slide-switch-slider {
+      background-color: #0d00ff;
     }
 
+    .slide-switch-checkbox:checked + .slide-switch-slider:before {
+      transform: translateX(26px);
+    }
   }
-   
+  .left {
+    background-color: #9699aa;
+  }
+  .right {
+    background-color: #9699aa;
+  }
+  .slide-switch:before ~ .left {
+    background-color: #0d00ff;
+  }
+  .slide-switch:checked ~ .right {
+    background-color: #0d00ff;
+  }
+  .yearly {
+    display: none;
+  }
 }
+
 #step3:checked ~ main {
-  aside [for="step1"] .step-circle {
+  aside [for="step3"] .step-circle {
     background-color: #9699aa;
   }
   .step-3 {
@@ -174,7 +186,7 @@ img{
   }
 }
 #step4:checked ~ main {
-  aside [for="step1"] .step-circle {
+  aside [for="step4"] .step-circle {
     background-color: #9699aa;
   }
   .step-4 {
@@ -182,14 +194,12 @@ img{
   }
 }
 
-
 .step-content {
   width: 70%;
   margin: auto;
   display: none;
   margin-top: 40px;
 }
-
 
 .max-width {
   width: 100%;
@@ -205,8 +215,68 @@ footer {
 }
 input:where([type="text"], [type="email"], [type="number"]) {
   border-color: 1px solid #d6d9d6;
-  padding: 20px;
+  padding: 0.75rem;
   border-radius: 8px;
+  border: 1px solid hsl(231, 11%, 63%);
+  margin-top: 0.25rem;
+}
+.add-ons {
+  display: block;
+}
+.box {
+  display: inline-flex;
+  border: 1px solid hsl(231, 11%, 63%);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.box:hover {
+  border: 1px solid hsl(213, 96%, 18%);
+}
+.box:has(input:checked) {
+  background-color: hsl(231, 11%, 63%, 20%);
+  border: 1px solid hsl(213, 96%, 18%);
 }
 
-  
+.container input {
+  grid-column: 1;
+  grid-row: span 2;
+}
+.price {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+h3 {
+  grid-column: 2;
+}
+label.box {
+  display: flex;
+  align-items: center;
+  margin-block: 1rem;
+  gap: 2rem;
+
+  span {
+    margin-left: auto;
+  }
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.item:nth-of-type(2) {
+  border-bottom: 1px solid hsl(231, 11%, 63%);
+  padding-bottom: 1rem;
+}
+.receipt {
+  padding: 1.5rem 1rem;
+  background-color: hsl(231, 11%, 63%, 20%);
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 1.5rem;
+}
+.total .price {
+  font-size: 1.5rem;
+}
