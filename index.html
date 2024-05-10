@@ -20,8 +20,8 @@
       />
     </head>
     <body>
-      <input type="radio" id="step1" name="step" checked />
-      <input type="radio" id="step2" name="step" />
+      <input type="radio" id="step1" name="step"  />
+      <input type="radio" id="step2" name="step" checked/>
       <input type="radio" id="step3" name="step" />
       <input type="radio" id="step4" name="step" />
       <input type="radio" id="step5" name="step" />
@@ -74,26 +74,30 @@
         <div class="step-content step-2">
           <h1 class="title">Select your plan</h1>
           <p class="subtitle">You have the option of monthly or yearly billing.</p>
-          <div class="Arcade">
+          <label for="arcade-1">
+            <input type="radio" name="plan" id="arcade-1"checked>
             <img src="./assets/images/icon-arcade.svg" />
             <h3>Arcade</h3>
             <span><p>$9/mo</p></span>
-          </div>
-          <img src="./assets/images/icon-advanced.svg" />
-          <div class="Advanced">
+        </label>
+         
+          <label for="Advanced-1" class="Advanced">
+            <input type="radio" id="Advanced-1" name="plan">
+            <img src="./assets/images/icon-advanced.svg" />
             <h3>Advanced</h3>
             <span><p>$12/mo</p></span>
-          </div>
-          <div class="Pro">
+          </label>
+          <label for="Pro-1" class="Pro">
+            <input type="radio" id="Pro-1" name="plan">
             <img src="./assets/images/icon-pro.svg" />
             <h3>Pro</h3>
             <span><p>$15/mo</p></span>
-          </div>
+          </label>
           <div class="slide-switch">
             <p>Monthly</p>
-            <label class="switch">
-              <input type="checkbox" />
-              <span class="slider round"></span>
+            <label class="slide-switch">
+              <input type="checkbox" id="slide-switch" class="slide-switch-checkbox">
+              <span class="slide-switch-slider"></span>
             </label>
             <p>Yearly</p>
           </div>
